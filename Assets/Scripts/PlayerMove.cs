@@ -50,7 +50,7 @@ public class PlayerMove : MonoBehaviour
     {
         cam = Camera.main;
         rb = GetComponent<Rigidbody2D>();
-        playerAnim = GetComponent<Animator>();
+        //playerAnim = GetComponent<Animator>();
         rb.gravityScale = data.gravityScale;
         if (PlayerPrefs.HasKey(SceneManager.GetActiveScene().buildIndex+"positionX")&& PlayerPrefs.HasKey(SceneManager.GetActiveScene().buildIndex + "positionY"))
         {
@@ -264,14 +264,7 @@ public class PlayerMove : MonoBehaviour
         {
             isSliding = false;
         }
-        if(rb.velocity.magnitude > 0.2 || rb.velocity.magnitude < -0.2)
-        {
-            cam.GetComponent<PixelPerfectCamera>().pixelSnapping = false;
-        }
-        else
-        {
-            cam.GetComponent<PixelPerfectCamera>().pixelSnapping = true;
-        }
+       
 
     }
 
@@ -283,12 +276,12 @@ public class PlayerMove : MonoBehaviour
         {
             if (moveInput.x > 0)
             {
-                GetComponent<SpriteRenderer>().sprite = faceRight;
+                //GetComponent<SpriteRenderer>().sprite = faceRight;
                 isFacingRight = true;
             }        
             else if (moveInput.x < 0)
             {
-                GetComponent<SpriteRenderer>().sprite = faceLeft;
+                //GetComponent<SpriteRenderer>().sprite = faceLeft;
                 isFacingRight = false;
             }
         }
